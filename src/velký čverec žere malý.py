@@ -1,5 +1,3 @@
-import sys
-
 import pygame
 pygame.init()
 
@@ -11,18 +9,13 @@ rozliseni_okna = (800, 800)
 okno = pygame.display.set_mode(rozliseni_okna)
 
 #pozice ctverce
-pozice_ctverce_x = 500
+pozice_ctverce_x = 200
 pozice_ctverce_y = 100
 
 #ryclost ctverce
 rychlost_ctverce = 0.2
 
 #nahodna pozice ctevercku
-def random_pozice():
-    x = random.randint(0, -20)
-    y = random.randint(0, -20)
-    return x, y
-
 
 #ukonceni hry
 while True:
@@ -47,7 +40,7 @@ while True:
         pozice_ctverce_y += rychlost_ctverce
             
 #vytvoreni malych cteverku
-    pygame.draw.rect(okno, (x, y, 15, 15))
+
         
     
     
