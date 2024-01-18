@@ -15,7 +15,10 @@ pozice_ctverce_x = 500
 pozice_ctverce_y = 100
 
 #ryclost ctverce
-rychlost_ctverce = 0.2
+rychlost_ctverce = 1
+
+#velikost velkeho ctverece
+velikost = 20
 
 #nahodna pozice ctevercku
 maly_x = random.randint(20, 780)
@@ -47,15 +50,25 @@ while True:
     if stisknute_klavesy[pygame.K_DOWN]:
         pozice_ctverce_y += rychlost_ctverce
             
+#požírání mylých
+    if (pozice_ctverce_x >= maly_x - velikost) and (pozice_ctverce_x <= maly_x + 15) and (pozice_ctverce_y >= maly_y - velikost) and (pozice_ctverce_y <= maly_y + 15):
+        velikost += 0.1 
+ 
+       
+   
+        
+            
     
+            
+            
 #barva okna
     okno.fill((255, 255, 255))
     
 #vytvoreni ctverce
-    pygame.draw.rect(okno, (0, 0, 0), (pozice_ctverce_x, pozice_ctverce_y, 20, 20))
+    velky_ctverec = pygame.draw.rect(okno, (0, 0, 0), (pozice_ctverce_x, pozice_ctverce_y, velikost, velikost))
     
 #vytvoreni malych ctvercu
-    pygame.draw.rect(okno, (255, 0, 0), (maly_x, maly_y, 15, 15))
+    maly_ctverec_1 = pygame.draw.rect(okno, (255, 0, 0), (maly_x, maly_y, 15, 15))
     
     
     
