@@ -16,6 +16,8 @@ pozice_ctverce_y = 100
 rychlost_ctverce = 0.2
 
 #nahodna pozice ctevercku
+maly_x = random.randint(20, 780)
+maly_y = random.randint(20, 780)
 
 #ukonceni hry
 while True:
@@ -39,11 +41,7 @@ while True:
     if stisknute_klavesy[pygame.K_DOWN]:
         pozice_ctverce_y += rychlost_ctverce
             
-#vytvoreni malych cteverku
 
-        
-    
-    
 #barva okna
     okno.fill((255, 255, 255))
     
@@ -51,6 +49,6 @@ while True:
     pygame.draw.rect(okno, (0, 0, 0), (pozice_ctverce_x, pozice_ctverce_y, 20, 20))
     
 #vytvoreni malych ctvercu
-    
+    pygame.draw.rect(okno, (255, 0, 0), (maly_x, maly_y, 15, 15))
     
     pygame.display.update()
