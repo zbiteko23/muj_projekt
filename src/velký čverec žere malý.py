@@ -23,6 +23,8 @@ maly_y = random.randint(20, 780)
 
 
 
+
+
 #ukonceni hry
 while True:
     for udalost in pygame.event.get():
@@ -45,10 +47,6 @@ while True:
     if stisknute_klavesy[pygame.K_DOWN]:
         pozice_ctverce_y += rychlost_ctverce
             
-#vytvoreni malych cteverku
-    pygame.draw.rect(okno, (255, 0, 0), (maly_x, maly_y, 15, 15))
-        
-    
     
 #barva okna
     okno.fill((255, 255, 255))
@@ -57,6 +55,8 @@ while True:
     pygame.draw.rect(okno, (0, 0, 0), (pozice_ctverce_x, pozice_ctverce_y, 20, 20))
     
 #vytvoreni malych ctvercu
+    pygame.draw.rect(okno, (255, 0, 0), (maly_x, maly_y, 15, 15))
+    
     
     
     pygame.display.update()
