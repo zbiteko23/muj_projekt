@@ -1,4 +1,4 @@
- #zaklady 
+# zaklady 
 import sys
 import pygame
 import random
@@ -17,7 +17,7 @@ velikost_ctverce = 20
 
 # náhodné pozice malých čtverců
 mala_ctverce = []
-for _ in range(random.randint(5, 15)):
+for _ in range(random.randint(5, 10)):
     mala_ctverce.append((random.randint(20, 780), random.randint(20, 780)))
 
 while True:
@@ -26,7 +26,7 @@ while True:
             pygame.quit()
             sys.exit()
 
-#pohyb
+# pohyb
     stisknute_klavesy = pygame.key.get_pressed()
 
     if stisknute_klavesy[pygame.K_RIGHT]:
@@ -38,11 +38,11 @@ while True:
     if stisknute_klavesy[pygame.K_DOWN]:
         pozice_ctverce_y += rychlost_ctverce
 
-#barva okna
+# barva okna
     okno.fill((255, 255, 255))
     
-    #vykresleni ctverce
-    pygame.draw.rect(okno, (0, 0, 0), (pozice_ctverce_x, pozice_ctverce_y, velikost_ctverce, velikost_ctverce))
+    # vykresleni ctverce
+    pygame.draw.rect(okno, (0, 0, 255), (pozice_ctverce_x, pozice_ctverce_y, velikost_ctverce, velikost_ctverce))
 
     # Vykreslení malých čtverců a detekce kolizí
     for maly_x, maly_y in mala_ctverce:
@@ -59,7 +59,7 @@ while True:
             
             # Zvětšení velkého čtverce a změna rychlosti
             velikost_ctverce += 5
-            rychlost_ctverce -= 0.05
+            rychlost_ctverce -= 0.02
 
             # Zmizení malého čtverce
             mala_ctverce.remove((maly_x, maly_y))
