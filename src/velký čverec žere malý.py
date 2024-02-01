@@ -12,7 +12,7 @@ okno = pygame.display.set_mode(rozliseni_okna)
 # Pozice velkého čtverce
 pozice_ctverce_x = 200
 pozice_ctverce_y = 100
-rychlost_ctverce = 1
+rychlost_ctverce = 0.7
 velikost_ctverce = 20
 
 # náhodné pozice malých čtverců
